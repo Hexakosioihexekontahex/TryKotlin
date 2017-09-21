@@ -1,6 +1,10 @@
 import animals.cats.CatA
 import animals.*
 import Color.*
+import abstracts.BaseTemplate
+import interfaces.MyInterface
+import openexam.Driver
+import openexam.User
 
 fun main(args: Array<String>){
 
@@ -39,6 +43,13 @@ fun main(args: Array<String>){
     compareInts(5, 5)
     compareInts(1, 0)
     compareInts(34123, 34113)
+
+
+    myInterface()
+
+    myAbstractClass()
+
+    openexam()
 
 }
 
@@ -128,4 +139,34 @@ fun compareInts(a: Int, b: Int){
         (a < b) -> println("$a < $b")
         (a == b) -> println("$a == $b")
     }
+}
+fun myInterface(){
+    var v1: MyInterface = Aa()
+    var v2: MyInterface = Bb()
+    v1.fun1()
+    v2.fun1()
+}
+
+fun myAbstractClass(){
+    val v1: BaseTemplate = ATemplate()
+
+    v1.a()
+    v1.minus()
+    v1.a()
+    v1.a()
+    v1.minus()
+    v1.a()
+
+}
+
+fun openexam(){
+    val user = User("Roman")
+    println(user)
+    println("user.getAddress()='${user.getAddress()}'")
+    val u: User = User("Alex")
+    val d: Driver = Driver("Alex")
+    println(u)
+    println(u.getAddress())
+    println(d)
+    println(d.getAddress())
 }
