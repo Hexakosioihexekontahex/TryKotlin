@@ -51,6 +51,10 @@ fun main(args: Array<String>){
 
     openexam()
 
+    val mouse = Mouse()
+    //mouse.funA()
+    println(mouse)
+
 }
 
 
